@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         let leftScaleContainerView = ScaleView(frame: CGRect(x: leftContainerView.frame.origin.x , y: leftContainerView.frame.origin.y, width: self.view.frame.width/2, height: leftContainerView.frame.height), scaleStartPosition: CGPoint(x: self.view.frame.width/2, y: initialScreenHeight/4), scaleEndPosition: CGPoint(x: self.view.frame.width/2, y: leftContainerView.frame.height), scaleDirection: "Left")
         
         
-        let rightScaleContainerView = ScaleView(frame: CGRect(x: rightContainerView.frame.origin.x , y: rightContainerView.frame.origin.y, width: self.view.frame.width/2, height: rightContainerView.frame.height), scaleStartPosition: CGPoint(x: self.view.frame.width/2, y: initialScreenHeight/4), scaleEndPosition: CGPoint(x: self.view.frame.width/2, y: rightContainerView.frame.origin.y), scaleDirection: "Right")
+        let rightScaleContainerView = ScaleView(frame: CGRect(x: rightContainerView.frame.origin.x , y: rightContainerView.frame.origin.y, width: self.view.frame.width/2, height: rightContainerView.frame.height), scaleStartPosition: CGPoint(x: self.view.frame.origin.x, y: initialScreenHeight/4), scaleEndPosition: CGPoint(x: self.view.frame.origin.x, y: rightContainerView.frame.height), scaleDirection: "Right")
         
 
         leftScaleContainerView.backgroundColor = .yellow
@@ -36,11 +36,6 @@ class ViewController: UIViewController {
         rightScaleContainerView.backgroundColor = .yellow
         rightScaleContainerView.alpha = 0.5
         self.rightContainerView.addSubview(rightScaleContainerView)
-        
-//        let x = MinPayCalculator()
-//        let y = x.minPayCalculator(balance: "1000", APR: "20", repaymentType: 1, percentOfBalance: "1", fixedAmount: "25", percentOfBalanceOnly: "0")
-//        print(y)
-        
 
     }
 
@@ -63,8 +58,8 @@ extension ViewController: UIScrollViewDelegate {
             let currentLeftVerticalOffset: CGFloat = leftScrollView.contentOffset.y
             let percentageLeftVerticalOffset: CGFloat = currentLeftVerticalOffset / maximumLeftVerticalOffset
             
-            let movePercentageRightVerticalOffsetBy = -percentageLeftVerticalOffset
-            //let movePercentageRightVerticalOffsetBy = percentageLeftVerticalOffset
+            //let movePercentageRightVerticalOffsetBy = -percentageLeftVerticalOffset
+            let movePercentageRightVerticalOffsetBy = percentageLeftVerticalOffset
             rightScrollView.contentOffset.y = maximumRightVerticalOffset * movePercentageRightVerticalOffsetBy
 
         } else if (rightScrollView == scrollView) {
@@ -72,7 +67,8 @@ extension ViewController: UIScrollViewDelegate {
             let currentRightVerticalOffset: CGFloat = rightScrollView.contentOffset.y
             let percentageRightVerticalOffset: CGFloat = currentRightVerticalOffset / maximumRightVerticalOffset
             
-            let movePercentageLeftVerticalOffsetBy = -percentageRightVerticalOffset
+            //let movePercentageLeftVerticalOffsetBy = -percentageRightVerticalOffset
+            let movePercentageLeftVerticalOffsetBy = percentageRightVerticalOffset
             leftScrollView.contentOffset.y = maximumLeftVerticalOffset * movePercentageLeftVerticalOffsetBy
 
         }

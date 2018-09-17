@@ -69,19 +69,14 @@ class ScaleView: UIView {
         let p1 = CGPoint(x: scaleStartPosition.x, y: scaleStartPosition.y + value)
         var p2 = CGPoint(x: p1.x, y: p1.y)
         
-        if style == .short {
-            if scaleDirection == "Left" {
-                p2.x -= shortDash
-            } else if scaleDirection == "Right" {
-                p2.x += shortDash
-            }
-            
-        } else if style == .long {
-            if scaleDirection == "Left" {
-                p2.x -= longDash
-            } else if scaleDirection == "Right" {
-                p2.x += longDash
-            }
+        if style == .short && scaleDirection == "Left" {
+            p2.x -= shortDash
+        } else if style == .short && scaleDirection == "Right" {
+            p2.x += shortDash
+        } else if style == .long && scaleDirection == "Left" {
+            p2.x -= longDash
+        } else if style == .long && scaleDirection == "Right" {
+            p2.x += longDash
         }
         
         path.move(to: p1)
