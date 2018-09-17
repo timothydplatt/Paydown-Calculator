@@ -12,6 +12,8 @@
 		AA103FB1214AD12C002EFDAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA103FAF214AD12C002EFDAF /* Main.storyboard */; };
 		AA103FB3214AD12D002EFDAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA103FB2214AD12D002EFDAF /* Assets.xcassets */; };
 		AA103FB6214AD12D002EFDAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA103FB4214AD12D002EFDAF /* LaunchScreen.storyboard */; };
+		AA103FC2214BC45E002EFDAF /* ScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA103FC1214BC45E002EFDAF /* ScaleView.swift */; };
+		AA2D5664214FBA8E006A2407 /* MinPayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AA103FB2214AD12D002EFDAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA103FB5214AD12D002EFDAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA103FB7214AD12D002EFDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA103FC1214BC45E002EFDAF /* ScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleView.swift; sourceTree = "<group>"; };
+		AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinPayCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		AA103FAA214AD12B002EFDAF /* Paydown Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				AA103FAB214AD12B002EFDAF /* AppDelegate.swift */,
-				AA103FAD214AD12C002EFDAF /* ViewController.swift */,
-				AA103FAF214AD12C002EFDAF /* Main.storyboard */,
-				AA103FB2214AD12D002EFDAF /* Assets.xcassets */,
-				AA103FB4214AD12D002EFDAF /* LaunchScreen.storyboard */,
 				AA103FB7214AD12D002EFDAF /* Info.plist */,
+				AA103FC3214BC488002EFDAF /* Model */,
+				AA103FC4214BC48F002EFDAF /* View */,
+				AA103FC5214BC497002EFDAF /* Controller */,
+				AA103FC6214BC4B3002EFDAF /* Other */,
 			);
 			path = "Paydown Calculator";
+			sourceTree = "<group>";
+		};
+		AA103FC3214BC488002EFDAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA103FC4214BC48F002EFDAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA103FC1214BC45E002EFDAF /* ScaleView.swift */,
+				AA103FAF214AD12C002EFDAF /* Main.storyboard */,
+				AA103FB4214AD12D002EFDAF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA103FC5214BC497002EFDAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA103FAB214AD12B002EFDAF /* AppDelegate.swift */,
+				AA103FAD214AD12C002EFDAF /* ViewController.swift */,
+				AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA103FC6214BC4B3002EFDAF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AA103FB2214AD12D002EFDAF /* Assets.xcassets */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA103FC2214BC45E002EFDAF /* ScaleView.swift in Sources */,
+				AA2D5664214FBA8E006A2407 /* MinPayCalculator.swift in Sources */,
 				AA103FAE214AD12C002EFDAF /* ViewController.swift in Sources */,
 				AA103FAC214AD12B002EFDAF /* AppDelegate.swift in Sources */,
 			);
