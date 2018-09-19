@@ -14,6 +14,10 @@
 		AA103FB6214AD12D002EFDAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA103FB4214AD12D002EFDAF /* LaunchScreen.storyboard */; };
 		AA103FC2214BC45E002EFDAF /* ScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA103FC1214BC45E002EFDAF /* ScaleView.swift */; };
 		AA2D5664214FBA8E006A2407 /* MinPayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */; };
+		AAE672202150CDBC00C7EAD2 /* LandingScreenControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6721F2150CDBC00C7EAD2 /* LandingScreenControllerViewController.swift */; };
+		AAE672222150D2A000C7EAD2 /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE672212150D2A000C7EAD2 /* CurrencyField.swift */; };
+		AAE672262150FCEF00C7EAD2 /* APRScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE672252150FCEF00C7EAD2 /* APRScreenViewController.swift */; };
+		AAE67228215100FF00C7EAD2 /* PercentageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE67227215100FF00C7EAD2 /* PercentageField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		AA103FB7214AD12D002EFDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA103FC1214BC45E002EFDAF /* ScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleView.swift; sourceTree = "<group>"; };
 		AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinPayCalculator.swift; sourceTree = "<group>"; };
+		AAE6721F2150CDBC00C7EAD2 /* LandingScreenControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenControllerViewController.swift; sourceTree = "<group>"; };
+		AAE672212150D2A000C7EAD2 /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
+		AAE672252150FCEF00C7EAD2 /* APRScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRScreenViewController.swift; sourceTree = "<group>"; };
+		AAE67227215100FF00C7EAD2 /* PercentageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,8 @@
 		AA103FC3214BC488002EFDAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AAE672212150D2A000C7EAD2 /* CurrencyField.swift */,
+				AAE67227215100FF00C7EAD2 /* PercentageField.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,6 +100,8 @@
 				AA103FAB214AD12B002EFDAF /* AppDelegate.swift */,
 				AA103FAD214AD12C002EFDAF /* ViewController.swift */,
 				AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */,
+				AAE6721F2150CDBC00C7EAD2 /* LandingScreenControllerViewController.swift */,
+				AAE672252150FCEF00C7EAD2 /* APRScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,8 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE672202150CDBC00C7EAD2 /* LandingScreenControllerViewController.swift in Sources */,
 				AA103FC2214BC45E002EFDAF /* ScaleView.swift in Sources */,
+				AAE67228215100FF00C7EAD2 /* PercentageField.swift in Sources */,
+				AAE672262150FCEF00C7EAD2 /* APRScreenViewController.swift in Sources */,
 				AA2D5664214FBA8E006A2407 /* MinPayCalculator.swift in Sources */,
+				AAE672222150D2A000C7EAD2 /* CurrencyField.swift in Sources */,
 				AA103FAE214AD12C002EFDAF /* ViewController.swift in Sources */,
 				AA103FAC214AD12B002EFDAF /* AppDelegate.swift in Sources */,
 			);

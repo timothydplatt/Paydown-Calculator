@@ -10,7 +10,6 @@ class ViewController: UIViewController {
     
     //MARK:- PROPERTIES
     
-    
     //MARK:- APP LIFECYCLE
     
     override func viewDidLoad() {
