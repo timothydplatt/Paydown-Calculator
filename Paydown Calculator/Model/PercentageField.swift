@@ -9,7 +9,7 @@
 import UIKit
 
 class PercentageField: UITextField {
-
+    
     var strings: String { return text ?? "" }
     var decimal: Decimal {
         return strings.digit.decimals /
@@ -25,12 +25,12 @@ class PercentageField: UITextField {
         //Formatter.symbol.locale = Locale(identifier: "en_GB") // or "en_US", "fr_FR", etc
         addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         keyboardType = .numberPad
-        textAlignment = .right
+        textAlignment = .center
         tintColor = UIColor .white
         editingChanged()
     }
     override func deleteBackward() {
-        text = strings.digit.dropLast().string
+        text = strings.digit.dropFirst().string
         editingChanged()
     }
     @objc func editingChanged(_ textField: UITextField? = nil) {

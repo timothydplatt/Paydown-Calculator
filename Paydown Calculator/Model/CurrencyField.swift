@@ -9,7 +9,7 @@
 import UIKit
 
 class CurrencyField: UITextField {
-
+    
     var string: String { return text ?? "" }
     var decimal: Decimal {
         return string.digits.decimal /
@@ -18,7 +18,7 @@ class CurrencyField: UITextField {
     var decimalNumber: NSDecimalNumber { return decimal.number }
     var doubleValue: Double { return decimalNumber.doubleValue }
     var integerValue: Int { return decimalNumber.intValue   }
-    let maximum: Decimal = 999_999.99
+    let maximum: Decimal = 99_999.99
     private var lastValue: String?
     override func willMove(toSuperview newSuperview: UIView?) {
         // you can make it a fixed locale currency if needed
@@ -27,12 +27,14 @@ class CurrencyField: UITextField {
         keyboardType = .numberPad
         textAlignment = .right
         tintColor = UIColor .white
+        //returnKeyType = .done
         editingChanged()
     }
     override func deleteBackward() {
         text = string.digits.dropLast().string
         editingChanged()
     }
+    
     @objc func editingChanged(_ textField: UITextField? = nil) {
         guard decimal <= maximum else {
             text = lastValue
