@@ -69,18 +69,18 @@ class MinPayCalculator {
             NSDecimalRound(&remainingBalanceRounded, &remainingBalance, 2, .plain)
             NSDecimalRound(&cumulativeInterestRounded, &cumulativeInterest, 2, .plain)
             
-//            print("Actual minimum payment amount: \(actualPaymentAmountRounded)")
-//            print("Principle payment amount: \(principalPaymentAmountRounded)")
-//            print("Interest payment amount: \(interestPaymentAmountRounded)")
-//            print("Remaining balance: \(remainingBalanceRounded)")
-//            print("Running interest: \(cumulativeInterestRounded)")
-//            print("")
+            print("Actual minimum payment amount: \(actualPaymentAmountRounded)")
+            print("Principle payment amount: \(principalPaymentAmountRounded)")
+            print("Interest payment amount: \(interestPaymentAmountRounded)")
+            print("Remaining balance: \(remainingBalanceRounded)")
+            print("Running interest: \(cumulativeInterestRounded)")
+            print("")
         }
         
         NSDecimalRound(&cumulativeInterestRounded, &cumulativeInterest, 2, .plain)
         
-//        print("Months to payoff: \(monthsToPayOff)")
-//        print("Total interest: \(cumulativeInterest)")
+        print("Months to payoff: \(monthsToPayOff)")
+        print("Total interest: \(cumulativeInterest)")
         
         return monthsToPayOff
     }

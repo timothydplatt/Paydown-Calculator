@@ -22,20 +22,26 @@ class MinPayFormulaViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var doneOutlet: UIBarButtonItem!
     
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
-//        let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "testViewController")
-//        self.navigationController!.pushViewController(vc, animated: true)
+        let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "testViewController") as! TestViewController
         
         guard let percentageOfBalance = percentOfBalanceTextfield.text?.dropLast() else { return }
         guard let percentageOfBalanceDouble = Double(percentageOfBalance) else { return }
-        
+
         guard let percentageOfBalanceOnly = percentOfBalanceOnlyTextfield.text?.dropLast() else { return }
         guard let percentageOfBalanceOnlyDouble = Double(percentageOfBalanceOnly) else { return }
-        
+
         guard let repaymentAmountWithoutCurrencySymbol = amountTextfield.text?.dropFirst() else { return }
         let repaymentAmountWithoutComma = repaymentAmountWithoutCurrencySymbol.replacingOccurrences(of: ",", with: "")
         guard let repaymentAmountDouble = Double(repaymentAmountWithoutComma) else { return }
+
+        vc.balance = balance
+        vc.APR = APR
+        vc.percentageOfBalance = percentageOfBalanceDouble
+        vc.percentageOfBalanceOnly = percentageOfBalanceOnlyDouble
+        vc.repaymentAmount = repaymentAmountDouble
         
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
@@ -47,10 +53,10 @@ class MinPayFormulaViewController: UIViewController, UITextFieldDelegate {
         amountTextfield.delegate = self
         doneOutlet.isEnabled = false
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
     
     
@@ -106,7 +112,7 @@ class MinPayFormulaViewController: UIViewController, UITextFieldDelegate {
         
         return false
     }
-
+    
     func updateTextField(newText: String, _ textfield: UITextField) -> Void {
         if newText.count == 0 {
             textfield.text = newText
