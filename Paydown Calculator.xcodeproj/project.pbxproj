@@ -13,6 +13,7 @@
 		AA103FB3214AD12D002EFDAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA103FB2214AD12D002EFDAF /* Assets.xcassets */; };
 		AA103FB6214AD12D002EFDAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA103FB4214AD12D002EFDAF /* LaunchScreen.storyboard */; };
 		AA103FC2214BC45E002EFDAF /* ScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA103FC1214BC45E002EFDAF /* ScaleView.swift */; };
+		AA1ACCB52158ECF6003B8975 /* RepaymentAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1ACCB42158ECF6003B8975 /* RepaymentAmount.swift */; };
 		AA2D5664214FBA8E006A2407 /* MinPayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */; };
 		AA4442072157E8AD00781D83 /* MinPayFormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4442062157E8AD00781D83 /* MinPayFormulaViewController.swift */; };
 		AA4442092157E94900781D83 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4442082157E94900781D83 /* MainApp.storyboard */; };
@@ -33,6 +34,7 @@
 		AA103FB5214AD12D002EFDAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA103FB7214AD12D002EFDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA103FC1214BC45E002EFDAF /* ScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleView.swift; sourceTree = "<group>"; };
+		AA1ACCB42158ECF6003B8975 /* RepaymentAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepaymentAmount.swift; sourceTree = "<group>"; };
 		AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinPayCalculator.swift; sourceTree = "<group>"; };
 		AA4442062157E8AD00781D83 /* MinPayFormulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinPayFormulaViewController.swift; sourceTree = "<group>"; };
 		AA4442082157E94900781D83 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		AA103FC3214BC488002EFDAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA1ACCB42158ECF6003B8975 /* RepaymentAmount.swift */,
 				AAE672212150D2A000C7EAD2 /* CurrencyField.swift */,
 			);
 			path = Model;
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE672202150CDBC00C7EAD2 /* BalanceScreenControllerViewController.swift in Sources */,
+				AA1ACCB52158ECF6003B8975 /* RepaymentAmount.swift in Sources */,
 				AA103FC2214BC45E002EFDAF /* ScaleView.swift in Sources */,
 				AA44420B2157EB7000781D83 /* TestViewController.swift in Sources */,
 				AAE672262150FCEF00C7EAD2 /* APRScreenViewController.swift in Sources */,

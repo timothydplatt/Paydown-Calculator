@@ -308,7 +308,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ech-gh-Y93">
                                         <rect key="frame" x="0.0" y="434.33333333333337" width="375" height="145"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="£0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LP2-Tm-uvd">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="£0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LP2-Tm-uvd" customClass="RepaymentAmount" customModule="Paydown_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="123.00000000000001" y="43" width="129.33333333333337" height="59"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
@@ -359,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oe9-zm-trS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-999.20000000000005" y="133.74384236453201"/>
+            <point key="canvasLocation" x="-862" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

@@ -9,6 +9,9 @@
 import UIKit
 
 class TestViewController: UIViewController {
+    
+    var APR: Double = 0
+    var balance: Double = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
