@@ -34,6 +34,18 @@ class BalanceScreenControllerViewController: UIViewController, UITextFieldDelega
         }
         return true
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "BalanceScreentoAPRScreen" {
+            let viewController = segue.destination as! APRScreenViewController
+            
+            guard let balanceStringWithoutCurrencySymbol = balanceTextField.text?.dropFirst() else { return }
+            let balanceStringWithoutComma = balanceStringWithoutCurrencySymbol.replacingOccurrences(of: ",", with: "")
+            guard let balanceStringDouble = Double(balanceStringWithoutComma) else { return }
+            
+            viewController.balance = balanceStringDouble
+        }
+    }
     
 }
 

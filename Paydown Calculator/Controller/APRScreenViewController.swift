@@ -12,13 +12,19 @@ class APRScreenViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var APRTextField: UITextField!
     @IBOutlet weak var APRLabel: UILabel!
+    @IBOutlet weak var nextButtonOutlet: UIBarButtonItem!
     
-
+    @IBAction func nextButton(_ sender: UIBarButtonItem) {
+    }
+    
+    var balance: Double = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         APRTextField.delegate = self
         APRTextField.keyboardType = .decimalPad
+        nextButtonOutlet?.isEnabled = false
         
     }
 
@@ -27,30 +33,62 @@ class APRScreenViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        guard let oldText = textField.text, let r = Range(range, in: oldText) else {
-            return true
-        }
-        
+        guard let oldText = textField.text else { return true }
+        guard let r = Range(range, in: oldText) else { return true }
         let newText = oldText.replacingCharacters(in: r, with: string)
-        let isNumeric = newText.isEmpty || (Double(newText) != nil)
-        let numberOfDots = newText.components(separatedBy: ".").count - 1
+        var formattedNewText = newText.replacingOccurrences(of: "%", with: "")
         
+        let isNumeric = formattedNewText.isEmpty || (Double(formattedNewText) != nil)
+        let numberOfDots = formattedNewText.components(separatedBy: ".").count - 1
+        
+        let numberOfIntegerDigits: Int
         let numberOfDecimalDigits: Int
-        if let dotIndex = newText.index(of: ".") {
-            numberOfDecimalDigits = newText.distance(from: dotIndex, to: newText.endIndex) - 1
+
+        if let dotIndex = formattedNewText.index(of: ".") {
+            numberOfDecimalDigits = formattedNewText.distance(from: dotIndex, to: formattedNewText.endIndex) - 1
         } else {
             numberOfDecimalDigits = 0
         }
+
+        if !(newText.contains(".")) {
+            numberOfIntegerDigits = formattedNewText.count
+        } else {
+            numberOfIntegerDigits = 0
+        }
         
-        return isNumeric && numberOfDots <= 1 && numberOfDecimalDigits <= 2
+        if string == "" && formattedNewText.count > 0 {
+            formattedNewText.removeLast()
+        }
+        
+        if  isNumeric == true && numberOfDots <= 1 && numberOfDecimalDigits <= 2 && numberOfIntegerDigits <= 2 {
+            updateAPRTextField(newText: formattedNewText)
+        }
+        return false
     }
-
-
+    
+    func updateAPRTextField(newText: String) -> Void {
+        if newText.count == 0 {
+            APRTextField.text = newText
+            nextButtonOutlet?.isEnabled = false
+        } else {
+            APRTextField.text = newText + "%"
+            nextButtonOutlet?.isEnabled = true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "APRScreenToMinPayScreen" {
+            let viewController = segue.destination as! MinPayFormulaViewController
+            
+            guard let APRString = APRTextField.text?.dropLast() else { return }
+            guard let APRStringDouble = Double(APRString) else { return }
+            
+            viewController.APR = APRStringDouble
+            viewController.balance = balance
+        }
+    }
+    
 }
-    
-    
-
-
-
