@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3771322B62D2D09CE47460A2 /* Pods_Paydown_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD037EDD1B01467712290B2 /* Pods_Paydown_Calculator.framework */; };
 		AA103FAC214AD12B002EFDAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA103FAB214AD12B002EFDAF /* AppDelegate.swift */; };
 		AA103FAE214AD12C002EFDAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA103FAD214AD12C002EFDAF /* ViewController.swift */; };
 		AA103FB1214AD12C002EFDAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA103FAF214AD12C002EFDAF /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3ABA202D03D156A2724D01E3 /* Pods-Paydown Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paydown Calculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paydown Calculator/Pods-Paydown Calculator.release.xcconfig"; sourceTree = "<group>"; };
 		AA103FA8214AD12B002EFDAF /* Paydown Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paydown Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA103FAB214AD12B002EFDAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA103FAD214AD12C002EFDAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		AAE6721F2150CDBC00C7EAD2 /* BalanceScreenControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenControllerViewController.swift; sourceTree = "<group>"; };
 		AAE672212150D2A000C7EAD2 /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		AAE672252150FCEF00C7EAD2 /* APRScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRScreenViewController.swift; sourceTree = "<group>"; };
+		CAD037EDD1B01467712290B2 /* Pods_Paydown_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paydown_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6DEA324DAE4B1CE204EA5A /* Pods-Paydown Calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paydown Calculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paydown Calculator/Pods-Paydown Calculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3771322B62D2D09CE47460A2 /* Pods_Paydown_Calculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46303FD96A913F8E54C0B487 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED6DEA324DAE4B1CE204EA5A /* Pods-Paydown Calculator.debug.xcconfig */,
+				3ABA202D03D156A2724D01E3 /* Pods-Paydown Calculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8335FDE1D2FEB1E624D3B24E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAD037EDD1B01467712290B2 /* Pods_Paydown_Calculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA103F9F214AD12B002EFDAF = {
 			isa = PBXGroup;
 			children = (
 				AA103FAA214AD12B002EFDAF /* Paydown Calculator */,
 				AA103FA9214AD12B002EFDAF /* Products */,
+				46303FD96A913F8E54C0B487 /* Pods */,
+				8335FDE1D2FEB1E624D3B24E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA103FBA214AD12D002EFDAF /* Build configuration list for PBXNativeTarget "Paydown Calculator" */;
 			buildPhases = (
+				E484748566CFB6767C723D4A /* [CP] Check Pods Manifest.lock */,
 				AA103FA4214AD12B002EFDAF /* Sources */,
 				AA103FA5214AD12B002EFDAF /* Frameworks */,
 				AA103FA6214AD12B002EFDAF /* Resources */,
+				72D4D3ED6329FEBE21938AD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +222,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72D4D3ED6329FEBE21938AD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Paydown Calculator/Pods-Paydown Calculator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Paydown Calculator/Pods-Paydown Calculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E484748566CFB6767C723D4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Paydown Calculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA103FA4214AD12B002EFDAF /* Sources */ = {
@@ -355,6 +420,7 @@
 		};
 		AA103FBB214AD12D002EFDAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED6DEA324DAE4B1CE204EA5A /* Pods-Paydown Calculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -373,6 +439,7 @@
 		};
 		AA103FBC214AD12D002EFDAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ABA202D03D156A2724D01E3 /* Pods-Paydown Calculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

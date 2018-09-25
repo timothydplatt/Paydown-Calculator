@@ -181,9 +181,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtW-nB-m3X">
                                         <rect key="frame" x="0.0" y="609" width="375" height="203"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp2-QK-3ce">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp2-QK-3ce">
                                                 <rect key="frame" x="115" y="79" width="145" height="45"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                                 <state key="normal" title="Get Started">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -194,6 +193,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Rp2-QK-3ce" firstAttribute="centerY" secondItem="TtW-nB-m3X" secondAttribute="centerY" id="503-Wn-ork"/>
+                                            <constraint firstItem="Rp2-QK-3ce" firstAttribute="centerX" secondItem="TtW-nB-m3X" secondAttribute="centerX" id="mxv-J9-sF1"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>

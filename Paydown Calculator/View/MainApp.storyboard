@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,27 +15,39 @@
             <objects>
                 <viewController storyboardIdentifier="testViewController" id="Wnn-tR-Qkx" customClass="TestViewController" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H4X-SV-JYE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sl4-6g-CrJ">
-                                <rect key="frame" x="166" y="235" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sl4-6g-CrJ">
+                                <rect key="frame" x="166.66666666666666" y="539" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIc-UR-iOi" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="106" width="375" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sl4-6g-CrJ" firstAttribute="top" secondItem="bIc-UR-iOi" secondAttribute="bottom" constant="27" id="QQK-9R-Oew"/>
+                            <constraint firstItem="bIc-UR-iOi" firstAttribute="top" secondItem="4MO-vY-dNX" secondAttribute="top" constant="62" id="SuG-FR-IVh"/>
+                            <constraint firstItem="bIc-UR-iOi" firstAttribute="leading" secondItem="4MO-vY-dNX" secondAttribute="leading" id="c9H-FD-ylg"/>
+                            <constraint firstItem="bIc-UR-iOi" firstAttribute="trailing" secondItem="4MO-vY-dNX" secondAttribute="trailing" id="pm2-kw-f5a"/>
+                            <constraint firstItem="bIc-UR-iOi" firstAttribute="centerX" secondItem="Sl4-6g-CrJ" secondAttribute="centerX" id="rkm-e1-nhf"/>
+                            <constraint firstItem="bIc-UR-iOi" firstAttribute="height" secondItem="H4X-SV-JYE" secondAttribute="height" multiplier="0.5" id="tVu-7h-PxY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4MO-vY-dNX"/>
                     </view>
                     <connections>
+                        <outlet property="chtChart" destination="bIc-UR-iOi" id="gg2-1u-NWO"/>
                         <outlet property="payDownTimeLabel" destination="Sl4-6g-CrJ" id="HKH-Gk-r49"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yly-QZ-Jrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16" y="4"/>
+            <point key="canvasLocation" x="15.199999999999999" y="3.6945812807881775"/>
         </scene>
     </scenes>
 </document>

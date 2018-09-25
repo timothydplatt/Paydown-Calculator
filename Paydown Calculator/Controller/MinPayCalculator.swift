@@ -13,7 +13,7 @@ class MinPayCalculator {
     /*  Repayment Type 1: Greater of % of balance + interest or amount
      Repayment Type 2: Greater of % of balance + interest, % of balance or amount */
     
-    func minPayCalculator(balance: String, APR: String, repaymentType: Int, percentOfBalance: String, fixedAmount: String, percentOfBalanceOnly: String) -> Int {
+    func minPayCalculator(balance: String, APR: String, repaymentType: Int, percentOfBalance: String, fixedAmount: String, percentOfBalanceOnly: String) -> (payDownTime: Int, balanceAtMonth: Array<Double>) {
         
         let balance = Decimal(string: balance)!
         let APR = Decimal(string: APR)!
@@ -35,6 +35,8 @@ class MinPayCalculator {
         var interestPaymentAmountRounded = Decimal()
         var remainingBalanceRounded = Decimal()
         var cumulativeInterestRounded = Decimal()
+        
+        var balanceAtMonths: [Double] = []
         
         while remainingBalance > 0 {
             
@@ -69,6 +71,8 @@ class MinPayCalculator {
             NSDecimalRound(&remainingBalanceRounded, &remainingBalance, 2, .plain)
             NSDecimalRound(&cumulativeInterestRounded, &cumulativeInterest, 2, .plain)
             
+            balanceAtMonths.append(Double(truncating: remainingBalance as NSNumber))
+            
             print("Actual minimum payment amount: \(actualPaymentAmountRounded)")
             print("Principle payment amount: \(principalPaymentAmountRounded)")
             print("Interest payment amount: \(interestPaymentAmountRounded)")
@@ -82,7 +86,7 @@ class MinPayCalculator {
         print("Months to payoff: \(monthsToPayOff)")
         print("Total interest: \(cumulativeInterest)")
         
-        return monthsToPayOff
+        return (monthsToPayOff, balanceAtMonths)
     }
     
 }
