@@ -10,6 +10,9 @@ import UIKit
 
 class TestViewController: UIViewController {
     
+    @IBOutlet weak var payDownTimeLabel: UILabel!
+    
+    
     var APR: Double = 0
     var balance: Double = 0
     var percentageOfBalance: Double = 0
@@ -26,7 +29,9 @@ class TestViewController: UIViewController {
         print("Repayment Amount: \(repaymentAmount)")
         
         let minPayCalculator = MinPayCalculator()
-        minPayCalculator.minPayCalculator(balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
+        let payDownTimeIfPayingMinimum = minPayCalculator.minPayCalculator(balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
+        
+        payDownTimeLabel.text = String(payDownTimeIfPayingMinimum) + " Months"
     }
     
     override func didReceiveMemoryWarning() {
