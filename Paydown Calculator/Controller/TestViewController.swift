@@ -26,11 +26,11 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Balance: \(balance)")
-        print("APR: \(APR)")
-        print("Percentage Of Balance: \(percentageOfBalance)")
-        print("Percentage Of Balance Only: \(percentageOfBalanceOnly)")
-        print("Repayment Amount: \(repaymentAmount)")
+//        print("Balance: \(balance)")
+//        print("APR: \(APR)")
+//        print("Percentage Of Balance: \(percentageOfBalance)")
+//        print("Percentage Of Balance Only: \(percentageOfBalanceOnly)")
+//        print("Repayment Amount: \(repaymentAmount)")
         
         let minPayCalculator = MinPayCalculator()
         let payDownTimeIfPayingMinimum = minPayCalculator.minPayCalculator(balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
@@ -79,7 +79,7 @@ class TestViewController: UIViewController {
         chtChart.rightAxis.enabled = false
         chtChart.xAxis.labelPosition = .bottom
         //chtChart.animate(xAxisDuration: 3)
-        chtChart.animate(xAxisDuration: 3, easingOption: .easeInElastic)
+        chtChart.animate(xAxisDuration: 3, easingOption: .easeInBack)
 
     }
     

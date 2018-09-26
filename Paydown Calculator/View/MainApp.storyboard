@@ -28,6 +28,14 @@
                                 <rect key="frame" x="0.0" y="106" width="375" height="406"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfB-al-UHx">
+                                <rect key="frame" x="164" y="679" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="xFG-2J-NrR" kind="show" id="dsH-g2-Anp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -48,6 +56,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yly-QZ-Jrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="15.199999999999999" y="3.6945812807881775"/>
+        </scene>
+        <!--Test View Controller2 View Controller-->
+        <scene sceneID="8P2-KC-lRc">
+            <objects>
+                <viewController id="xFG-2J-NrR" customClass="TestViewController2ViewController" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9eM-ek-jzI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQ6-Pe-Vpb" customClass="UICircularProgressRing" customModule="UICircularProgressRing">
+                                <rect key="frame" x="10" y="203" width="355" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rQ6-Pe-Vpb" firstAttribute="height" secondItem="9eM-ek-jzI" secondAttribute="height" multiplier="0.5" id="0oS-xF-0Sa"/>
+                            <constraint firstItem="rQ6-Pe-Vpb" firstAttribute="leading" secondItem="D6f-wZ-rPC" secondAttribute="leading" constant="10" id="57c-Td-sGi"/>
+                            <constraint firstItem="rQ6-Pe-Vpb" firstAttribute="centerX" secondItem="9eM-ek-jzI" secondAttribute="centerX" id="DcT-L8-i9d"/>
+                            <constraint firstItem="rQ6-Pe-Vpb" firstAttribute="centerY" secondItem="9eM-ek-jzI" secondAttribute="centerY" id="Qqh-6Y-TY3"/>
+                            <constraint firstItem="rQ6-Pe-Vpb" firstAttribute="trailing" secondItem="D6f-wZ-rPC" secondAttribute="trailing" constant="-10" id="spl-Hr-41H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D6f-wZ-rPC"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressRing" destination="rQ6-Pe-Vpb" id="axw-xe-29s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuC-5z-l5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.60000000000002" y="5.9113300492610836"/>
         </scene>
     </scenes>
 </document>
