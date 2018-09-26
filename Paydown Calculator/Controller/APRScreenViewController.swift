@@ -64,16 +64,21 @@ class APRScreenViewController: UIViewController, UITextFieldDelegate {
         }
         
         if  isNumeric == true && numberOfDots <= 1 && numberOfDecimalDigits <= 2 && numberOfIntegerDigits <= 2 {
-            updateAPRTextField(newText: formattedNewText)
+            updateAPRTextField(newText: formattedNewText, numberOfIntegerDigits: numberOfIntegerDigits)
         }
         return false
     }
     
-    func updateAPRTextField(newText: String) -> Void {
+    func updateAPRTextField(newText: String, numberOfIntegerDigits: Int) -> Void {
         if newText.count == 0 {
             APRTextField.text = newText
             nextButtonOutlet?.isEnabled = false
-        } else {
+        }
+//        else if numberOfIntegerDigits == 2 {
+//            APRTextField.text = newText + "%" + "."
+//            nextButtonOutlet?.isEnabled = true
+//        }
+        else {
             APRTextField.text = newText + "%"
             nextButtonOutlet?.isEnabled = true
         }

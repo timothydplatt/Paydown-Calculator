@@ -104,6 +104,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="7tg-YS-3Zc">
                                                 <rect key="frame" x="137" y="61" width="101.33333333333331" height="59"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -169,24 +170,103 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Uom-e9-cCG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeS-OH-ARX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="162.33333333333334"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9TX-5J-QER">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
+                                        <rect key="frame" x="0.0" y="162.33333333333331" width="375" height="162.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w1N-jp-BsQ">
+                                                <rect key="frame" x="25" y="31.333333333333314" width="325" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revolving a credit card balance and only paying the minimum each month? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph0-Iy-zcp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="215" height="100"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-bank-cards-100" translatesAutoresizingMaskIntoConstraints="NO" id="qSd-qM-pml">
+                                                        <rect key="frame" x="225" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="c2q-pz-M0s"/>
+                                                            <constraint firstAttribute="height" constant="100" id="rio-L9-2ev"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="w1N-jp-BsQ" firstAttribute="centerX" secondItem="9TX-5J-QER" secondAttribute="centerX" id="TDG-TW-kDg"/>
+                                            <constraint firstItem="w1N-jp-BsQ" firstAttribute="leading" secondItem="9TX-5J-QER" secondAttribute="leading" constant="25" id="mkH-Bx-ub6"/>
+                                            <constraint firstItem="w1N-jp-BsQ" firstAttribute="centerY" secondItem="9TX-5J-QER" secondAttribute="centerY" id="qru-hS-Agp"/>
+                                            <constraint firstAttribute="trailing" secondItem="w1N-jp-BsQ" secondAttribute="trailing" constant="25" id="rgR-dT-eIm"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOp-BQ-HZU">
-                                        <rect key="frame" x="0.0" y="203" width="375" height="203"/>
+                                        <rect key="frame" x="0.0" y="324.66666666666669" width="375" height="162.66666666666669"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9t9-Cb-XPY">
+                                                <rect key="frame" x="25" y="31.333333333333314" width="325" height="100"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-money-box-100" translatesAutoresizingMaskIntoConstraints="NO" id="0Mx-nO-QdH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="ucB-uY-TCa"/>
+                                                            <constraint firstAttribute="width" constant="100" id="zEX-6u-JKQ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paying a little more each and every month can make a huge difference!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qf-ig-JBO">
+                                                        <rect key="frame" x="110" y="0.0" width="215" height="100"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9t9-Cb-XPY" firstAttribute="leading" secondItem="eOp-BQ-HZU" secondAttribute="leading" constant="25" id="fGy-9Z-e6d"/>
+                                            <constraint firstItem="9t9-Cb-XPY" firstAttribute="centerX" secondItem="eOp-BQ-HZU" secondAttribute="centerX" id="iAu-Ib-IaF"/>
+                                            <constraint firstAttribute="trailing" secondItem="9t9-Cb-XPY" secondAttribute="trailing" constant="25" id="iYn-ue-Qlu"/>
+                                            <constraint firstItem="9t9-Cb-XPY" firstAttribute="centerY" secondItem="eOp-BQ-HZU" secondAttribute="centerY" id="teJ-3u-fQQ"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5N-Md-MOl">
-                                        <rect key="frame" x="0.0" y="406" width="375" height="203"/>
+                                        <rect key="frame" x="0.0" y="487.33333333333331" width="375" height="162.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9dP-Hm-e21">
+                                                <rect key="frame" x="25" y="31.000000000000057" width="325" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear you balances in a shorter time and pay less interest." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eW-8M-5e0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="215" height="100"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-confetti-100" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-Je-tUh">
+                                                        <rect key="frame" x="225" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="319-l8-YeM"/>
+                                                            <constraint firstAttribute="width" constant="100" id="fsn-Qw-gzA"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9dP-Hm-e21" firstAttribute="centerY" secondItem="u5N-Md-MOl" secondAttribute="centerY" id="OkA-2t-vJn"/>
+                                            <constraint firstItem="9dP-Hm-e21" firstAttribute="centerX" secondItem="u5N-Md-MOl" secondAttribute="centerX" id="nIi-4n-hpm"/>
+                                            <constraint firstAttribute="trailing" secondItem="9dP-Hm-e21" secondAttribute="trailing" constant="25" id="td7-W9-wcn"/>
+                                            <constraint firstItem="9dP-Hm-e21" firstAttribute="leading" secondItem="u5N-Md-MOl" secondAttribute="leading" constant="25" id="uM9-J1-9WC"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtW-nB-m3X">
-                                        <rect key="frame" x="0.0" y="609" width="375" height="203"/>
+                                        <rect key="frame" x="0.0" y="649.66666666666663" width="375" height="162.33333333333337"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp2-QK-3ce">
-                                                <rect key="frame" x="115" y="79" width="145" height="45"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                                <state key="normal" title="Get Started">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
+                                                <rect key="frame" x="118.66666666666669" y="58" width="138" height="46"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="Get Started"/>
                                                 <connections>
                                                     <action selector="getStartedButton:" destination="Ayd-xT-DGP" eventType="touchUpInside" id="RAA-Wy-Mdd"/>
                                                     <segue destination="Ode-3J-W7A" kind="show" id="MHw-yG-7Xz"/>
@@ -201,7 +281,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.6588235294117647" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Uom-e9-cCG" firstAttribute="width" secondItem="U32-QK-YmY" secondAttribute="width" id="4vz-Yk-AGL"/>
                             <constraint firstItem="Uom-e9-cCG" firstAttribute="height" secondItem="U32-QK-YmY" secondAttribute="height" id="Eix-bl-mVx"/>
@@ -212,10 +292,40 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ebv-MM-Wmv"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomLabel" destination="8eW-8M-5e0" id="khN-4k-gfi"/>
+                        <outlet property="middleLabel" destination="9Qf-ig-JBO" id="c4u-nQ-sU8"/>
+                        <outlet property="topLabel" destination="Ph0-Iy-zcp" id="vkw-jq-XK1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWt-PM-bb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="4aA-9e-h0F">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="oPr-c7-nap"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" id="q2t-1J-gzx">
+                    <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have a revolving credit card balance and only pay the minimum each month? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3R-x5-iAp">
+                            <rect key="frame" x="0.0" y="0.0" width="225" height="100"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-bank-cards-100" translatesAutoresizingMaskIntoConstraints="NO" id="5s6-VL-mfG">
+                            <rect key="frame" x="235" y="0.0" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="TnF-8d-YxJ"/>
+                                <constraint firstAttribute="height" constant="100" id="Zg9-HT-FPd"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="bue-7U-FiU"/>
+                </stackView>
             </objects>
-            <point key="canvasLocation" x="-4540" y="134"/>
+            <point key="canvasLocation" x="-4540" y="133.74384236453201"/>
         </scene>
         <!--Min Pay Formula Screen-->
         <scene sceneID="Qfw-1b-Jvn">
@@ -251,6 +361,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 0.0%" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Noy-RG-wL1">
                                                 <rect key="frame" x="118.66666666666667" y="43.000000000000028" width="137.66666666666663" height="59"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -282,6 +393,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 0.0%" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yF-Bl-lHR">
                                                 <rect key="frame" x="118.66666666666667" y="43" width="137.66666666666663" height="59"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -313,6 +425,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="£0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LP2-Tm-uvd" customClass="RepaymentAmount" customModule="Paydown_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="123.00000000000001" y="43" width="129.33333333333337" height="59"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -509,4 +622,9 @@
             <point key="canvasLocation" x="-3647.1999999999998" y="133.74384236453201"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-bank-cards-100" width="100" height="100"/>
+        <image name="icons8-confetti-100" width="100" height="100"/>
+        <image name="icons8-money-box-100" width="100" height="100"/>
+    </resources>
 </document>
