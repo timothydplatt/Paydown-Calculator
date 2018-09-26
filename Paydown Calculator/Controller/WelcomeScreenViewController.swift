@@ -13,7 +13,6 @@ class WelcomeScreenViewController: UIViewController {
     @IBAction func getStartedButton(_ sender: Any) {
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

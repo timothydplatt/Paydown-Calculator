@@ -12,7 +12,7 @@ import UICircularProgressRing
 class TestViewController2ViewController: UIViewController {
     
     var APR: Double = 20
-    var balance: Double = 500
+    var balance: Double = 2000
     var percentageOfBalance: Double = 1
     var percentageOfBalanceOnly: Double = 0
     var repaymentAmount: Double = 25
@@ -37,9 +37,15 @@ class TestViewController2ViewController: UIViewController {
         
         payDownTime = payDownTimeIfPayingMinimum.0
         
-        //progressRing.maxValue = CGFloat(payDownTime)
-        progressRing.maxValue = 50
-        progressRing.innerRingColor = UIColor.blue
+        //progressRing.maxValue = 100
+        progressRing.maxValue = UICircularProgressRing.ProgressValue(Float(payDownTime))
+        progressRing.outerRingColor = .green
+        progressRing.innerRingColor = .lightGray
+        progressRing.outerRingWidth = 10
+        progressRing.innerRingWidth = 10
+        progressRing.ringStyle = .inside
+        progressRing.font = UIFont.boldSystemFont(ofSize: 40)
+        progressRing.valueIndicator = " Months"
         test()
     }
     
@@ -47,7 +53,7 @@ class TestViewController2ViewController: UIViewController {
     func test () -> Void {
         // Somewhere not in viewDidLoad (since the views have not set yet, thus cannot be animated)
         // Remember to use unowned or weak self if refrencing self to avoid retain cycle
-        progressRing.startProgress(to: 49, duration: 2.0) {
+        progressRing.startProgress(to: 75, duration: 2.0) {
             print("Done animating!")
             // Do anything your heart desires...
         }
