@@ -15,31 +15,32 @@ class TestViewController: UIViewController {
     @IBOutlet weak var chtChart: LineChartView!
     
     var numbers : [Double] = []
-    
-    
     var APR: Double = 0
     var balance: Double = 0
     var percentageOfBalance: Double = 0
     var percentageOfBalanceOnly: Double = 0
     var repaymentAmount: Double = 0
+    var payDownTime: Int = 0
+    var cumulativeInterest: Decimal = 0
+    var firstMinPaymentAmount: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print("Balance: \(balance)")
-//        print("APR: \(APR)")
-//        print("Percentage Of Balance: \(percentageOfBalance)")
-//        print("Percentage Of Balance Only: \(percentageOfBalanceOnly)")
-//        print("Repayment Amount: \(repaymentAmount)")
-        
         let minPayCalculator = MinPayCalculator()
         let payDownTimeIfPayingMinimum = minPayCalculator.minPayCalculator(balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
         
-        payDownTimeLabel.text = String(payDownTimeIfPayingMinimum.0) + " Months"
+        payDownTime = payDownTimeIfPayingMinimum.payDownTime
+        cumulativeInterest = payDownTimeIfPayingMinimum.cumulativeInterest
+        firstMinPaymentAmount = payDownTimeIfPayingMinimum.minPaymentAtMonths[0]
+        //print("firstMinPaymentAmount \(firstMinPaymentAmount)")
+        
+        payDownTimeLabel.text = String(payDownTime)  + " Months"
         
         for i in 0..<payDownTimeIfPayingMinimum.balanceAtMonth.count {
   
             numbers.append(payDownTimeIfPayingMinimum.balanceAtMonth[i])
+            
         }
         
         updateGraph()
@@ -81,6 +82,21 @@ class TestViewController: UIViewController {
         //chtChart.animate(xAxisDuration: 3)
         chtChart.animate(xAxisDuration: 3, easingOption: .easeInBack)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "finalScreenSegue" {
+            let viewController = segue.destination as! TestViewController2ViewController
+            
+            viewController.balance = balance
+            viewController.APR = APR
+            viewController.percentageOfBalance = percentageOfBalance
+            viewController.percentageOfBalanceOnly = percentageOfBalanceOnly
+            viewController.repaymentAmount = repaymentAmount
+            viewController.payDownTime = payDownTime
+            viewController.cumulativeInterest = cumulativeInterest
+            viewController.firstMinPaymentAmount = firstMinPaymentAmount
+        }
     }
     
 }

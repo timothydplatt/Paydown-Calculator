@@ -10,10 +10,10 @@ import UIKit
 
 class MinPayCalculator {
     
-    /*  Repayment Type 1: Greater of % of balance + interest or amount
-     Repayment Type 2: Greater of % of balance + interest, % of balance or amount */
+    // Repayment Type 1: Greater of % of balance + interest or amount
+    // Repayment Type 2: Greater of % of balance + interest, % of balance or amount
     
-    func minPayCalculator(balance: String, APR: String, repaymentType: Int, percentOfBalance: String, fixedAmount: String, percentOfBalanceOnly: String) -> (payDownTime: Int, balanceAtMonth: Array<Double>, cumulativeInterest: Decimal) {
+    func minPayCalculator(balance: String, APR: String, repaymentType: Int, percentOfBalance: String, fixedAmount: String, percentOfBalanceOnly: String) -> (payDownTime: Int, balanceAtMonth: Array<Double>, cumulativeInterest: Decimal, minPaymentAtMonths: Array<Double>) {
         
         let balance = Decimal(string: balance)!
         let APR = Decimal(string: APR)!
@@ -38,6 +38,7 @@ class MinPayCalculator {
         var cumulativeInterestRounded = Decimal()
         
         var balanceAtMonths: [Double] = []
+        var minPaymentAtMonths: [Double] = []
         
         while remainingBalance > 0 {
             
@@ -50,12 +51,8 @@ class MinPayCalculator {
             if repaymentType == 1 && actualPaymentAmount < fixedAmount {
                 actualPaymentAmount = fixedAmount
                 
-            } else if repaymentType == 2 && actualPaymentAmount < remainingBalance * percentOfBalanceOnly{
-                actualPaymentAmount = remainingBalance * percentOfBalanceOnly
-                
-                if actualPaymentAmount < fixedAmount {
-                    actualPaymentAmount = fixedAmount
-                }
+            } else if repaymentType == 2 && actualPaymentAmount < max(remainingBalance * percentOfBalanceOnlyDecimal, fixedAmount) {
+                actualPaymentAmount = max(remainingBalance * percentOfBalanceOnlyDecimal, fixedAmount)
             }
             
             principalPaymentAmount = actualPaymentAmount - interestPaymentAmount
@@ -73,6 +70,7 @@ class MinPayCalculator {
             NSDecimalRound(&cumulativeInterestRounded, &cumulativeInterest, 2, .plain)
             
             balanceAtMonths.append(Double(truncating: remainingBalance as NSNumber))
+            minPaymentAtMonths.append(Double(truncating: actualPaymentAmount as NSNumber))
             
 //            print("Actual minimum payment amount: \(actualPaymentAmountRounded)")
 //            print("Principle payment amount: \(principalPaymentAmountRounded)")
@@ -82,12 +80,7 @@ class MinPayCalculator {
 //            print("")
         }
         
-        NSDecimalRound(&cumulativeInterestRounded, &cumulativeInterest, 2, .plain)
-        
-        print("Months to payoff: \(monthsToPayOff)")
-        print("Total interest: \(cumulativeInterest)")
-        
-        return (monthsToPayOff, balanceAtMonths, cumulativeInterest)
+        return (monthsToPayOff, balanceAtMonths, cumulativeInterestRounded, minPaymentAtMonths)
     }
     
 }
