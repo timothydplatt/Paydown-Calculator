@@ -9,22 +9,14 @@
 import UIKit
 import UICircularProgressRing
 
-class TestViewController2ViewController: UIViewController {
+class TestViewController2ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var progressRing: UICircularProgressRing!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var differenceLabel: UILabel!
-    @IBOutlet weak var stepperLabel: UILabel!
-    @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var minusSymbolButton: UIButton!
     @IBOutlet weak var plusSymbolButton: UIButton!
-    
-    @IBAction func minusSymbolButtonAction(_ sender: Any) {
-    }
-    
-    @IBAction func plusSymbolButtonAction(_ sender: Any) {
-    }
-    
+    @IBOutlet weak var fixedAmounttextField: UITextField!
     
     var balance: Double = 0
     var APR: Double = 0
@@ -34,80 +26,166 @@ class TestViewController2ViewController: UIViewController {
     var payDownTime: Int = 0
     var cumulativeInterest: Decimal = 0
     var firstMinPaymentAmount: Double = 0
+    let fixedAmountCalculator = FixedAmountCalculator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstMinPaymentRounded = firstMinPaymentAmount.rounded(.toNearestOrAwayFromZero)
-        let firstMinPaymentAmountAsString = String(format: "%.0f", firstMinPaymentRounded)
+        fixedAmounttextField.delegate = self
         
-        let balanceRounded = balance.rounded(.toNearestOrAwayFromZero)
-        let balanceAsString = String(format: "%.0f", balanceRounded)
-        
-        summaryLabel.text = "Paying only the minimum will take you \(payDownTime) months to clear your balance and cost £\(cumulativeInterest) in interest."
-        summaryLabel.numberOfLines = 0
-        summaryLabel.lineBreakMode = .byWordWrapping
+        initialiseSummaryLabel()
         
         differenceLabel.numberOfLines = 0
         differenceLabel.lineBreakMode = .byWordWrapping
         
+        let firstMinPaymentRounded = firstMinPaymentAmount.rounded(.toNearestOrAwayFromZero)
+        let firstMinPaymentAmountAsString = String(format: "%.0f", firstMinPaymentRounded)
+        let balanceRounded = balance.rounded(.toNearestOrAwayFromZero)
+        let balanceAsString = String(format: "%.0f", balanceRounded)
+        
         initialiseProgressRing()
-        initialiseStepper(startValue: Double(firstMinPaymentAmountAsString)!-1, maximumValue: Double(balanceAsString)!)
-        
-        test()
+        initialiseFixedAmounttextField(startValue: firstMinPaymentAmountAsString)
+        setProgressRingToMaximum(firstMinPayAmount: firstMinPaymentAmountAsString)
     }
     
-    @IBAction func stepperControl(_ sender: UIStepper) {
-        
-        stepperLabel.text = "£ " + Int(sender.value).description
-        
-        let fixedAmountCalculator = FixedAmountCalculator()
-        
-        let payDownTimeIfPayingFixedAmount = fixedAmountCalculator.fixPayCalculator(userFixedAmount: Int(sender.value).description, balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
-        
-        test1(monthsForFixed: Double(payDownTimeIfPayingFixedAmount.payDownTime))
-        
-        //differenceLabel.text = "Paying a fixed amount of \(firstMinPaymentRounded) each month will clear your balance X months more quickly, saving you £Y"
-        
-    }
-
-    func test() -> Void {
-
-        progressRing.startProgress(to: UICircularProgressRing.ProgressValue(Float(payDownTime)), duration: 2.0) {
-            print("Done animating!")
-            // Do anything your heart desires...
-        }
+    func initialiseSummaryLabel() -> Void {
+        summaryLabel.numberOfLines = 0
+        summaryLabel.lineBreakMode = .byWordWrapping
+        summaryLabel.text = "Paying only the minimum will take you \(payDownTime) months to clear your balance and cost £\(cumulativeInterest) in interest."
     }
     
-    func test1(monthsForFixed: Double) -> Void {
-
-        progressRing.startProgress(to: UICircularProgressRing.ProgressValue(Float(monthsForFixed)), duration: 2.0) {
-            print("Done animating!")
-            // Do anything your heart desires...
-        }
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    func initialiseProgressRing () -> Void {
+    func initialiseProgressRing() -> Void {
         progressRing.maxValue = UICircularProgressRing.ProgressValue(Float(payDownTime))
-        progressRing.outerRingWidth = 12
-        progressRing.innerRingWidth = 12
-        progressRing.ringStyle = .dashed
+        progressRing.outerRingWidth = 14
+        progressRing.innerRingWidth = 14
+        //progressRing.ringStyle = .dashed
+        progressRing.ringStyle = .inside
         progressRing.font = UIFont.boldSystemFont(ofSize: 40)
         progressRing.valueIndicator = " months"
     }
+
+    func initialiseFixedAmounttextField(startValue: String) -> Void {
+        fixedAmounttextField.text = String(startValue)
+        //Need to handle max/min amounts in the text field delegate function.
+    }
     
-    func initialiseStepper (startValue: Double, maximumValue: Double) -> Void {
-        stepper.wraps = true
-        stepper.autorepeat = true
-        stepper.value = startValue
-        stepper.maximumValue = maximumValue
+    func setProgressRingToMaximum(firstMinPayAmount: String) -> Void {
+        progressRing.startProgress(to: UICircularProgressRing.ProgressValue(Float(payDownTime)), duration: 2.0) {
+            
+            self.updateProgressRingForMinFixedAmount(minFixedAmount: firstMinPayAmount)
+            
+        }
+    }
+    
+    func updateProgressRingForMinFixedAmount(minFixedAmount: String) -> Void {
+        let payDownTimeIfPayingFixedAmount = fixedAmountCalculator.fixPayCalculator(userFixedAmount: minFixedAmount, balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
+        
+        progressRing.startProgress(to: UICircularProgressRing.ProgressValue(Float(payDownTimeIfPayingFixedAmount.payDownTime)), duration: 2.0) {
+            
+            var payDownDifference = self.payDownTime - payDownTimeIfPayingFixedAmount.payDownTime
+            var interestDifference = self.cumulativeInterest - payDownTimeIfPayingFixedAmount.cumulativeInterestRounded
+            
+            self.updateDifferenceLabel(fixedAmount: minFixedAmount, payDownDifference: payDownDifference, interestDifference: interestDifference)
+        }
+    }
+    
+    func updateDifferenceLabel(fixedAmount: String, payDownDifference: Int, interestDifference: Decimal) -> Void {
+        differenceLabel.text = "Paying a fixed amount of \(fixedAmount) each month will clear your balance \(payDownDifference) months more quickly, saving you £\(interestDifference) in interest!"
+    }
+    
+    @IBAction func minusSymbolButtonAction(_ sender: Any) {
+        let currentTextFeildAmount = fixedAmounttextField.text
+        let newTextFieldAmount = Int(currentTextFeildAmount!)! - 1
+        fixedAmounttextField.text = String(newTextFieldAmount)
+        
+        let payDownTimeIfPayingFixedAmount = fixedAmountCalculator.fixPayCalculator(userFixedAmount: String(newTextFieldAmount), balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
+        
+        updateProgressRingForFixedAmount(monthsForFixed: Double(payDownTimeIfPayingFixedAmount.payDownTime))
+        
+        var payDownDifference = self.payDownTime - payDownTimeIfPayingFixedAmount.payDownTime
+        var interestDifference = self.cumulativeInterest - payDownTimeIfPayingFixedAmount.cumulativeInterestRounded
+        
+        self.updateDifferenceLabel(fixedAmount: String(newTextFieldAmount), payDownDifference: payDownDifference, interestDifference: interestDifference)
+    }
+    
+    @IBAction func plusSymbolButtonAction(_ sender: Any) {
+        let currentTextFeildAmount = fixedAmounttextField.text
+        let newTextFieldAmount = Int(currentTextFeildAmount!)! + 1
+        fixedAmounttextField.text = String(newTextFieldAmount)
+        
+        let payDownTimeIfPayingFixedAmount = fixedAmountCalculator.fixPayCalculator(userFixedAmount: String(newTextFieldAmount), balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
+        
+        updateProgressRingForFixedAmount(monthsForFixed: Double(payDownTimeIfPayingFixedAmount.payDownTime))
+        
+        var payDownDifference = self.payDownTime - payDownTimeIfPayingFixedAmount.payDownTime
+        var interestDifference = self.cumulativeInterest - payDownTimeIfPayingFixedAmount.cumulativeInterestRounded
+        
+        self.updateDifferenceLabel(fixedAmount: String(newTextFieldAmount), payDownDifference: payDownDifference, interestDifference: interestDifference)
+    }
+    
+    func updateProgressRingForFixedAmount(monthsForFixed: Double) -> Void {
+        progressRing.startProgress(to: UICircularProgressRing.ProgressValue(Float(monthsForFixed)), duration: 2.0) {
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //    @IBAction func stepperControl(_ sender: UIStepper) {
+    //
+    //        stepperLabel.text = "£ " + Int(sender.value).description
+    //
+    //        let payDownTimeIfPayingFixedAmount = fixedAmountCalculator.fixPayCalculator(userFixedAmount: Int(sender.value).description, balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
+    //
+    //        updateProgressRingForFixedAmount(monthsForFixed: Double(payDownTimeIfPayingFixedAmount.payDownTime))
+    //
+    //    }
+    
+    
+//    func initialiseStepper(startValue: Double, maximumValue: Double) -> Void {
+//        stepper.wraps = true
+//        stepper.autorepeat = true
+//        stepper.value = startValue
+//        stepper.maximumValue = maximumValue
+//        //Needs min value, but the value I initialise with can't be -1
+//    }
+
+    
+    
+    
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let oldText = textField.text else { return true }
+        guard let r = Range(range, in: oldText) else { return true }
+        let newText = oldText.replacingCharacters(in: r, with: string)
+        let isNumeric = newText.isEmpty || (Double(newText) != nil)
+        let numberOfIntegerDigits = newText.count
+        
+        print(newText)
+        
+        if numberOfIntegerDigits <= 2 && isNumeric {
+            
+            let payDownTimeIfPayingFixedAmount = fixedAmountCalculator.fixPayCalculator(userFixedAmount: String(newText), balance: String(balance), APR: String(APR), repaymentType: 1, percentOfBalance: String(percentageOfBalance), fixedAmount: String(repaymentAmount), percentOfBalanceOnly: String(percentageOfBalanceOnly))
+            
+            updateProgressRingForFixedAmount(monthsForFixed: Double(payDownTimeIfPayingFixedAmount.payDownTime))
+            
+            var payDownDifference = self.payDownTime - payDownTimeIfPayingFixedAmount.payDownTime
+            var interestDifference = self.cumulativeInterest - payDownTimeIfPayingFixedAmount.cumulativeInterestRounded
+            
+            self.updateDifferenceLabel(fixedAmount: String(newText), payDownDifference: payDownDifference, interestDifference: interestDifference)
+            
+            return true
+        } else {
+            return false
+        }
     }
     
 }

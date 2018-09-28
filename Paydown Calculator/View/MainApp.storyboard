@@ -117,18 +117,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X4-iC-A9q">
                                 <rect key="frame" x="0.0" y="690.33333333333337" width="375" height="121.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHP-t5-ISX">
-                                        <rect key="frame" x="187.66666666666666" y="5" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="SEe-fv-no8">
-                                        <rect key="frame" x="140.66666666666666" y="46.333333333333258" width="94" height="29"/>
-                                        <connections>
-                                            <action selector="stepperControl:" destination="xFG-2J-NrR" eventType="valueChanged" id="5v6-AC-8tg"/>
-                                        </connections>
-                                    </stepper>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAk-tB-l5E">
                                         <rect key="frame" x="50" y="40.666666666666629" width="40" height="40"/>
                                         <constraints>
@@ -151,19 +139,23 @@
                                             <action selector="plusSymbolButtonAction:" destination="xFG-2J-NrR" eventType="touchUpInside" id="1Q3-fP-Eed"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSy-Ox-u0Q">
+                                        <rect key="frame" x="181.66666666666666" y="39.333333333333258" width="12" height="43"/>
+                                        <color key="textColor" red="0.16078431372549018" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="SAk-tB-l5E" firstAttribute="centerY" secondItem="8X4-iC-A9q" secondAttribute="centerY" id="0Hk-j4-oJb"/>
-                                    <constraint firstItem="SEe-fv-no8" firstAttribute="centerX" secondItem="8X4-iC-A9q" secondAttribute="centerX" id="17M-Di-Q0M"/>
-                                    <constraint firstItem="MHP-t5-ISX" firstAttribute="top" secondItem="8X4-iC-A9q" secondAttribute="top" constant="5" id="1Wt-Nh-cMG"/>
-                                    <constraint firstItem="MHP-t5-ISX" firstAttribute="centerX" secondItem="8X4-iC-A9q" secondAttribute="centerX" id="42L-gC-mbt"/>
-                                    <constraint firstItem="SEe-fv-no8" firstAttribute="centerY" secondItem="8X4-iC-A9q" secondAttribute="centerY" id="5XC-bj-mkV"/>
                                     <constraint firstItem="SAk-tB-l5E" firstAttribute="centerY" secondItem="8X4-iC-A9q" secondAttribute="centerY" id="MDQ-6e-idq"/>
                                     <constraint firstItem="SAk-tB-l5E" firstAttribute="leading" secondItem="8X4-iC-A9q" secondAttribute="leading" constant="50" id="N2F-Ce-p7b"/>
+                                    <constraint firstItem="fSy-Ox-u0Q" firstAttribute="centerX" secondItem="8X4-iC-A9q" secondAttribute="centerX" id="c3B-Bb-KoW"/>
                                     <constraint firstItem="yv7-7m-D8C" firstAttribute="centerY" secondItem="8X4-iC-A9q" secondAttribute="centerY" id="kRB-BJ-ZwH"/>
                                     <constraint firstAttribute="trailing" secondItem="yv7-7m-D8C" secondAttribute="trailing" constant="50" id="kkF-Kc-avW"/>
                                     <constraint firstItem="SAk-tB-l5E" firstAttribute="centerY" secondItem="8X4-iC-A9q" secondAttribute="centerY" id="msm-O6-rSf"/>
+                                    <constraint firstItem="fSy-Ox-u0Q" firstAttribute="centerY" secondItem="8X4-iC-A9q" secondAttribute="centerY" id="rBD-ag-vGU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N51-jX-m9W">
@@ -212,11 +204,10 @@
                     </view>
                     <connections>
                         <outlet property="differenceLabel" destination="Gxb-Mv-wm0" id="4pH-qB-2TL"/>
+                        <outlet property="fixedAmounttextField" destination="fSy-Ox-u0Q" id="Y98-mn-ZTr"/>
                         <outlet property="minusSymbolButton" destination="SAk-tB-l5E" id="AD4-bZ-YKX"/>
                         <outlet property="plusSymbolButton" destination="yv7-7m-D8C" id="hET-2d-H65"/>
                         <outlet property="progressRing" destination="rQ6-Pe-Vpb" id="axw-xe-29s"/>
-                        <outlet property="stepper" destination="SEe-fv-no8" id="Etk-AZ-pAU"/>
-                        <outlet property="stepperLabel" destination="MHP-t5-ISX" id="6Be-C2-Kfi"/>
                         <outlet property="summaryLabel" destination="igr-9l-lUR" id="yVk-2t-I5L"/>
                     </connections>
                 </viewController>

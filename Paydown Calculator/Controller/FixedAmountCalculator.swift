@@ -13,7 +13,7 @@ class FixedAmountCalculator {
 // Repayment Type 1: Greater of % of balance + interest or amount
 // Repayment Type 2: Greater of % of balance + interest, % of balance or amount
     
-    func fixPayCalculator(userFixedAmount: String, balance: String, APR: String, repaymentType: Int, percentOfBalance: String, fixedAmount: String, percentOfBalanceOnly: String) -> (payDownTime: Int, balanceAtMonth: Array<Double>) {
+    func fixPayCalculator(userFixedAmount: String, balance: String, APR: String, repaymentType: Int, percentOfBalance: String, fixedAmount: String, percentOfBalanceOnly: String) -> (payDownTime: Int, balanceAtMonth: Array<Double>, cumulativeInterestRounded: Decimal) {
         
         let userFixedAmount = Decimal(string: userFixedAmount)! //Must be more than the first minimum payment amount.
         let balance = Decimal(string: balance)!
@@ -84,7 +84,7 @@ class FixedAmountCalculator {
         print("Months to payoff: \(monthsToPayOff)")
         print("Total interest: \(cumulativeInterest)")
         
-        return (monthsToPayOff, balanceAtMonths)
+        return (monthsToPayOff, balanceAtMonths, cumulativeInterestRounded)
     }
     
 }
