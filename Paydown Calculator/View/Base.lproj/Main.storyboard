@@ -335,6 +335,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cu5-lC-OAR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ueX-xp-Bfc">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <subviews>
@@ -452,8 +455,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.72549019607843135" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Cu5-lC-OAR" firstAttribute="top" secondItem="icO-2i-9eY" secondAttribute="top" id="8Kg-sk-NXX"/>
                             <constraint firstItem="ueX-xp-Bfc" firstAttribute="leading" secondItem="Ic9-hq-jfs" secondAttribute="leading" id="9j3-ef-WD3"/>
+                            <constraint firstItem="Cu5-lC-OAR" firstAttribute="leading" secondItem="Ic9-hq-jfs" secondAttribute="leading" id="B6K-to-Orl"/>
                             <constraint firstAttribute="bottom" secondItem="ueX-xp-Bfc" secondAttribute="bottom" id="HGf-6V-Exu"/>
+                            <constraint firstItem="Cu5-lC-OAR" firstAttribute="trailing" secondItem="Ic9-hq-jfs" secondAttribute="trailing" id="Mga-6Q-9gr"/>
+                            <constraint firstAttribute="bottom" secondItem="Cu5-lC-OAR" secondAttribute="bottom" id="Ttg-kg-Ues"/>
                             <constraint firstItem="ueX-xp-Bfc" firstAttribute="top" secondItem="Ic9-hq-jfs" secondAttribute="top" id="Zdf-SV-fUU"/>
                             <constraint firstItem="ueX-xp-Bfc" firstAttribute="trailing" secondItem="Ic9-hq-jfs" secondAttribute="trailing" id="sge-tO-7O4"/>
                         </constraints>
@@ -471,11 +478,12 @@
                         <outlet property="doneOutlet" destination="J3r-5B-jiz" id="tJR-tv-Oru"/>
                         <outlet property="percentOfBalanceOnlyTextfield" destination="0yF-Bl-lHR" id="9ge-4X-W4h"/>
                         <outlet property="percentOfBalanceTextfield" destination="Noy-RG-wL1" id="qtg-XH-d2Y"/>
+                        <outlet property="scrollView" destination="Cu5-lC-OAR" id="4kn-em-seu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oe9-zm-trS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-862" y="134"/>
+            <point key="canvasLocation" x="-863.20000000000005" y="133.74384236453201"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

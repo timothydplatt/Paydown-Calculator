@@ -20,6 +20,7 @@ class MinPayFormulaVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var percentOfBalanceOnlyTextfield: UITextField!
     @IBOutlet weak var amountTextfield: UITextField!
     @IBOutlet weak var doneOutlet: UIBarButtonItem!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
@@ -52,11 +53,28 @@ class MinPayFormulaVC: UIViewController, UITextFieldDelegate {
         percentOfBalanceOnlyTextfield.keyboardType = .decimalPad
         amountTextfield.delegate = self
         doneOutlet.isEnabled = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(MinPayFormulaVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MinPayFormulaVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/2
+                print(keyboardSize.height)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height/2
+                print(keyboardSize.height)
+            }
+        }
     }
     
     
