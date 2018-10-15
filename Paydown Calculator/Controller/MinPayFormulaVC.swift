@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MinPayFormulaViewController: UIViewController, UITextFieldDelegate {
+class MinPayFormulaVC: UIViewController, UITextFieldDelegate {
     
     var validPercentage = false
     var validAmount = false

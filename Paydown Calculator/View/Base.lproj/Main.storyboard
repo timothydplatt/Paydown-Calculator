@@ -13,7 +13,7 @@
         <!--Balance Screen-->
         <scene sceneID="uP0-By-O54">
             <objects>
-                <viewController title="Balance Screen" id="tHu-pc-jRB" customClass="BalanceScreenControllerViewController" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Balance Screen" id="tHu-pc-jRB" customClass="BalanceScreenVC" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F70-5Z-nBo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
         <!--APR Screen-->
         <scene sceneID="pCE-ry-N35">
             <objects>
-                <viewController title="APR Screen" id="Tfd-xW-kwV" customClass="APRScreenViewController" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="APR Screen" id="Tfd-xW-kwV" customClass="APRScreenVC" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Igg-Hr-Vlt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +162,7 @@
         <!--Welcome Screen-->
         <scene sceneID="iXC-ca-V6J">
             <objects>
-                <viewController title="Welcome Screen" id="Ayd-xT-DGP" customClass="WelcomeScreenViewController" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Welcome Screen" id="Ayd-xT-DGP" customClass="WelcomeScreenVC" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U32-QK-YmY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +330,7 @@
         <!--Min Pay Formula Screen-->
         <scene sceneID="Qfw-1b-Jvn">
             <objects>
-                <viewController title="Min Pay Formula Screen" id="zta-fS-4MR" customClass="MinPayFormulaViewController" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Min Pay Formula Screen" id="zta-fS-4MR" customClass="MinPayFormulaVC" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="icO-2i-9eY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

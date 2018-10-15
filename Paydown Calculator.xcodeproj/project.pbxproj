@@ -16,16 +16,16 @@
 		AA103FC2214BC45E002EFDAF /* ScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA103FC1214BC45E002EFDAF /* ScaleView.swift */; };
 		AA1ACCB52158ECF6003B8975 /* RepaymentAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1ACCB42158ECF6003B8975 /* RepaymentAmount.swift */; };
 		AA2D5664214FBA8E006A2407 /* MinPayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */; };
-		AA4442072157E8AD00781D83 /* MinPayFormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4442062157E8AD00781D83 /* MinPayFormulaViewController.swift */; };
+		AA4442072157E8AD00781D83 /* MinPayFormulaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4442062157E8AD00781D83 /* MinPayFormulaVC.swift */; };
 		AA4442092157E94900781D83 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4442082157E94900781D83 /* MainApp.storyboard */; };
 		AA44420B2157EB7000781D83 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44420A2157EB7000781D83 /* TestViewController.swift */; };
 		AA8A28B1215B6A5F00BECEE0 /* TestViewController2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A28B0215B6A5F00BECEE0 /* TestViewController2ViewController.swift */; };
 		AA8A28B3215BA52700BECEE0 /* FixedAmountCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A28B2215BA52700BECEE0 /* FixedAmountCalculator.swift */; };
-		AAC14550215376BF00A6417B /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1454F215376BF00A6417B /* WelcomeScreenViewController.swift */; };
+		AAC14550215376BF00A6417B /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1454F215376BF00A6417B /* WelcomeScreenVC.swift */; };
 		AAC14552215388DB00A6417B /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC14551215388DB00A6417B /* CustomNavigationController.swift */; };
-		AAE672202150CDBC00C7EAD2 /* BalanceScreenControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6721F2150CDBC00C7EAD2 /* BalanceScreenControllerViewController.swift */; };
+		AAE672202150CDBC00C7EAD2 /* BalanceScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6721F2150CDBC00C7EAD2 /* BalanceScreenVC.swift */; };
 		AAE672222150D2A000C7EAD2 /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE672212150D2A000C7EAD2 /* CurrencyField.swift */; };
-		AAE672262150FCEF00C7EAD2 /* APRScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE672252150FCEF00C7EAD2 /* APRScreenViewController.swift */; };
+		AAE672262150FCEF00C7EAD2 /* APRScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE672252150FCEF00C7EAD2 /* APRScreenVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,16 +40,16 @@
 		AA103FC1214BC45E002EFDAF /* ScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleView.swift; sourceTree = "<group>"; };
 		AA1ACCB42158ECF6003B8975 /* RepaymentAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepaymentAmount.swift; sourceTree = "<group>"; };
 		AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinPayCalculator.swift; sourceTree = "<group>"; };
-		AA4442062157E8AD00781D83 /* MinPayFormulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinPayFormulaViewController.swift; sourceTree = "<group>"; };
+		AA4442062157E8AD00781D83 /* MinPayFormulaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinPayFormulaVC.swift; sourceTree = "<group>"; };
 		AA4442082157E94900781D83 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		AA44420A2157EB7000781D83 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		AA8A28B0215B6A5F00BECEE0 /* TestViewController2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController2ViewController.swift; sourceTree = "<group>"; };
 		AA8A28B2215BA52700BECEE0 /* FixedAmountCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedAmountCalculator.swift; sourceTree = "<group>"; };
-		AAC1454F215376BF00A6417B /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeScreenViewController.swift; path = "Paydown Calculator/Controller/WelcomeScreenViewController.swift"; sourceTree = SOURCE_ROOT; };
+		AAC1454F215376BF00A6417B /* WelcomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeScreenVC.swift; path = "Paydown Calculator/Controller/WelcomeScreenVC.swift"; sourceTree = SOURCE_ROOT; };
 		AAC14551215388DB00A6417B /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomNavigationController.swift; path = "Paydown Calculator/Controller/CustomNavigationController.swift"; sourceTree = SOURCE_ROOT; };
-		AAE6721F2150CDBC00C7EAD2 /* BalanceScreenControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenControllerViewController.swift; sourceTree = "<group>"; };
+		AAE6721F2150CDBC00C7EAD2 /* BalanceScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenVC.swift; sourceTree = "<group>"; };
 		AAE672212150D2A000C7EAD2 /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
-		AAE672252150FCEF00C7EAD2 /* APRScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRScreenViewController.swift; sourceTree = "<group>"; };
+		AAE672252150FCEF00C7EAD2 /* APRScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRScreenVC.swift; sourceTree = "<group>"; };
 		CAD037EDD1B01467712290B2 /* Pods_Paydown_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paydown_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6DEA324DAE4B1CE204EA5A /* Pods-Paydown Calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paydown Calculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paydown Calculator/Pods-Paydown Calculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,16 +136,16 @@
 		AA103FC5214BC497002EFDAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AAC1454F215376BF00A6417B /* WelcomeScreenVC.swift */,
+				AAE6721F2150CDBC00C7EAD2 /* BalanceScreenVC.swift */,
+				AAE672252150FCEF00C7EAD2 /* APRScreenVC.swift */,
+				AA4442062157E8AD00781D83 /* MinPayFormulaVC.swift */,
 				AA8A28B0215B6A5F00BECEE0 /* TestViewController2ViewController.swift */,
 				AA44420A2157EB7000781D83 /* TestViewController.swift */,
 				AA103FAB214AD12B002EFDAF /* AppDelegate.swift */,
 				AA103FAD214AD12C002EFDAF /* ViewController.swift */,
 				AA2D5663214FBA8E006A2407 /* MinPayCalculator.swift */,
 				AA8A28B2215BA52700BECEE0 /* FixedAmountCalculator.swift */,
-				AAE6721F2150CDBC00C7EAD2 /* BalanceScreenControllerViewController.swift */,
-				AA4442062157E8AD00781D83 /* MinPayFormulaViewController.swift */,
-				AAC1454F215376BF00A6417B /* WelcomeScreenViewController.swift */,
-				AAE672252150FCEF00C7EAD2 /* APRScreenViewController.swift */,
 				AAC14551215388DB00A6417B /* CustomNavigationController.swift */,
 			);
 			path = Controller;
@@ -276,14 +276,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA8A28B3215BA52700BECEE0 /* FixedAmountCalculator.swift in Sources */,
-				AAE672202150CDBC00C7EAD2 /* BalanceScreenControllerViewController.swift in Sources */,
+				AAE672202150CDBC00C7EAD2 /* BalanceScreenVC.swift in Sources */,
 				AA1ACCB52158ECF6003B8975 /* RepaymentAmount.swift in Sources */,
 				AA103FC2214BC45E002EFDAF /* ScaleView.swift in Sources */,
 				AA44420B2157EB7000781D83 /* TestViewController.swift in Sources */,
-				AAE672262150FCEF00C7EAD2 /* APRScreenViewController.swift in Sources */,
-				AA4442072157E8AD00781D83 /* MinPayFormulaViewController.swift in Sources */,
+				AAE672262150FCEF00C7EAD2 /* APRScreenVC.swift in Sources */,
+				AA4442072157E8AD00781D83 /* MinPayFormulaVC.swift in Sources */,
 				AA2D5664214FBA8E006A2407 /* MinPayCalculator.swift in Sources */,
-				AAC14550215376BF00A6417B /* WelcomeScreenViewController.swift in Sources */,
+				AAC14550215376BF00A6417B /* WelcomeScreenVC.swift in Sources */,
 				AAC14552215388DB00A6417B /* CustomNavigationController.swift in Sources */,
 				AAE672222150D2A000C7EAD2 /* CurrencyField.swift in Sources */,
 				AA103FAE214AD12C002EFDAF /* ViewController.swift in Sources */,
