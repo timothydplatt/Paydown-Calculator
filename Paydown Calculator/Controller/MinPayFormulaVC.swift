@@ -26,7 +26,7 @@ class MinPayFormulaVC: UIViewController, UITextFieldDelegate {
     //MARK: - IB Actions
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "testViewController") as! TestViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "paydownVisualizationVC") as! PaydownVisualizationVC
         
         guard let percentageOfBalance = percentOfBalanceTextfield.text?.dropLast() else { return }
         guard let percentageOfBalanceDouble = Double(percentageOfBalance) else { return }

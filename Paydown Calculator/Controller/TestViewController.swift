@@ -86,7 +86,7 @@ class TestViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "finalScreenSegue" {
-            let viewController = segue.destination as! TestViewController2ViewController
+            let viewController = segue.destination as! PaydownVisualizationVC
             
             viewController.balance = balance
             viewController.APR = APR

@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="15.199999999999999" y="3.6945812807881775"/>
         </scene>
-        <!--Test View Controller2 View Controller-->
+        <!--Paydown VisualizationVC-->
         <scene sceneID="8P2-KC-lRc">
             <objects>
-                <viewController storyboardIdentifier="testViewController2" id="xFG-2J-NrR" customClass="TestViewController2ViewController" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="paydownVisualizationVC" id="xFG-2J-NrR" customClass="PaydownVisualizationVC" customModule="Paydown_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9eM-ek-jzI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

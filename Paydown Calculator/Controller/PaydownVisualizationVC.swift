@@ -9,7 +9,7 @@
 import UIKit
 import UICircularProgressRing
 
-class TestViewController2ViewController: UIViewController, UITextFieldDelegate {
+class PaydownVisualizationVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var progressRing: UICircularProgressRing!
     @IBOutlet weak var summaryLabel: UILabel!
