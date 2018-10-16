@@ -10,6 +10,9 @@ import UIKit
 
 class APRScreenVC: UIViewController, UITextFieldDelegate {
     
+    //MARK: - Class Properties
+    var balance: Double = 0;
+    
     //MARK: - IB Outlets
     @IBOutlet weak var APRTextField: UITextField!
     @IBOutlet weak var APRLabel: UILabel!
@@ -18,9 +21,6 @@ class APRScreenVC: UIViewController, UITextFieldDelegate {
     //MARK: - IB Actions
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
     }
-    
-    //MARK: - Class Properties
-    var balance: Double = 0;
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -102,12 +102,3 @@ class APRScreenVC: UIViewController, UITextFieldDelegate {
         }
     }
 }
-
-//            print("Current Text: \(currentText)")
-//            print("Updated Text: \(updatedText)")
-//            print("Formatted Updated Text: \(formattedUpdatedText)")
-//            print("Is Numeric?: \(isNumeric)")
-//            print("Number of dots?: \(numberOfDots)")
-//            print("Number of decimal digits: \(numberOfDecimalDigits)")
-//            print("Number of integer digits: \(numberOfIntegerDigits)")
-//            print("")
